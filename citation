@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0">
+  <info>
+    <title>Eigener Zitationsstil</title>
+    <id>http://www.beispiel.com/csl/eigener-stil</id>
+    <author>
+      <name>Eigener Stil Ersteller</name>
+    </author>
+    <category citation-format="author-date"/>
+  </info>
+  
+  <!-- Zitation -->
+  <citation>
+    <layout delimiter=";">
+      <text macro="author"/>
+      <group delimiter=",">
+        <choose>
+          <if type="chapter paper-conference">
+            <text term="other" form="short" text=" (Hrsg.)"/>
+          </if>
+          <else>
+            <text term="other" form="short" text=" (Hrsg.)"/>
+          </else>
+        </choose>
+      </group>
+      <text macro="issued"/>
+      <text term="page" prefix=" (" suffix=")"/>
+    </layout>
+  </citation>
+  
+  <!-- Bibliographie -->
+  <bibliography>
+    <sort>
+      <key macro="author"/>
+      <key macro="issued"/>
+    </sort>
+    <layout>
+      <text macro="author"/>
+      <text macro="issued"/>
+      <text variable="title"/>
+      <text variable="publisher"/>
+    </layout>
+  </bibliography>
+  
+  <!-- Makros -->
+  <macro name="author">
+    <names variable="author">
+      <name and="symbol"/>
+      <label form="short" prefix=" "/>
+    </names>
+  </macro>
+  
+  <macro name="issued">
+    <date variable="issued">
+      <date-part name="year"/>
+    </date>
+  </macro>
+</style>
